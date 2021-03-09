@@ -1,6 +1,6 @@
 import random
 import time
-
+import numpy as np
 #求解一个二行列式的值，例如
 '''
 |1 1 1|
@@ -35,6 +35,7 @@ def jiecn(jiec,a=1,i=0):
 #________________判断逆序数__________________
 #判断一个序列的逆序数
 def pdnxs(listp=[],count=0):
+
     for i in range(len(listp)):
         for j in range(i,len(listp)):
             if listp[i]>listp[j]:
@@ -85,12 +86,12 @@ def plhs(list1=[],list2=[]):
     ##需要把hlsvalu里面的list2传进来,，为list1，这是一,1~n的列表长度为n
     # ##____构建一个未来为了存储每一种结果的空容器list2
     n = len(list1)
-    # for i2 in range(jiec(n)):
-    #     list2.append([])
-    ##__在一个range里面的任意一个数，并把每n组数变成列表sjlb.list3,把n！组sjlb.list3存到一个列表中list3
-        #####产生一个列表sjlb.list3,要求里面的元素不能重复，可用哈希算法检索，判断哈希列表中没有0，0标志有一个没有,即有重复
-           #第二个要求，sjlb.list3,数量要
-            #第三个要求list3里面元素不能重复
+                 # for i2 in range(jiec(n)):
+                # list2.append([])
+                ##__在一个range里面的任意一个数，并把每n组数变成列表sjlb.list3,把n！组sjlb.list3存到一个列表中list3
+                #####产生一个列表sjlb.list3,要求里面的元素不能重复，可用哈希算法检索，判断哈希列表中没有0，0标志有一个没有,即有重复
+                 #第二个要求，sjlb.list3,数量要
+                #第三个要求list3里面元素不能重复
     #调用sjlb函数
     list2=sjlb(n)
     return list2
@@ -209,23 +210,25 @@ if __name__=='__main__':
              [0, 0, 0, 0, 50,9, 4],
              [1, 10,2, 3, 4, 8, 3],
              [1, 2, 1, 5, 2, 6, 2]]
-    list5 = [[6, 2, 3, 4, 5, 9, 8, 5],
-             [0, 2, 3, 4, 5, 9, 7, 4],
-             [0, 0, 90,4, 5, 9, 6, 6],
-             [0, 0, 1, 4, 5, 9, 5, 8],
-             [0, 0, 0, 0, 50,9, 4, 1],
-             [1, 10, 2, 3, 4, 8,3, 7],
-             [1, 2, 1, 5, 2, 6, 2, 9],
-             [1, 5, 1, 7, 2, 9, 2, 9]]
+    list5 = [[6, 2, 3, 4, 5, 9, 8, 9],
+             [0, 2, 3, 4, 5, 9, 7, 9],
+             [0, 0, 90, 4, 5, 9, 6, 8],
+             [0, 0, 1, 4, 5, 9, 5, 7],
+             [0, 0, 0, 0, 50, 9, 4, 8],
+             [1, 10, 2, 3, 4, 8, 3, 9],
+             [1, 2, 1, 5, 2, 6, 2, 8],
+             [1, 4, 2, 7, 4, 9, 3, 7]]
+
     #print('行列式：{}.行列式值：'.format(list1),hlsvalue(list1))
     #print('行列式：{}.行列式值：'.format(list2),hlsvalue(list2))
     #print('行列式：{}\n行列式值：'.format(list3), hlsvalue(list3))
     #print('行列式：{}\n行列式值：'.format(list4), hlsvalue(list4))
     print('行列式：{}\n行列式值：'.format(list5), hlsvalue(list5))
+    # print('行列式：{}\n行列式值：'.format(list6), hlsvalue(list6))
     #程序结束时间定点
     endtime = time.perf_counter()
     dur = endtime - startime
-    print('程序运行时间：', dur,'s')
+    print('dur = endtime - startime，程序运行时间：', dur,'s')
     #另一种计时方式
     print('time.process_time()程序运行时间：', time.process_time(),'s')
     #枚举的方法对7阶行列式还是可以的，用时80s，对8以上就耗时表较多，时间复杂度O(2**n)以上

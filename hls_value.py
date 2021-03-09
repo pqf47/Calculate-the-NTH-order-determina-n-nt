@@ -175,10 +175,19 @@ if __name__=='__main__':
              [0, 0, 0, 0, 50,9, 4],
              [1, 10,2, 3, 4, 8, 3],
              [1, 2, 1, 5, 2, 6, 2]]
+    list5 = [[6, 2, 3, 4, 5, 9, 8, 9],
+             [0, 2, 3, 4, 5, 9, 7, 9],
+             [0, 0, 90, 4, 5, 9, 6, 8],
+             [0, 0, 1, 4, 5, 9, 5, 7],
+             [0, 0, 0, 0, 50, 9, 4, 8],
+             [1, 10, 2, 3, 4, 8, 3, 9],
+             [1, 2, 1, 5, 2, 6, 2, 8],
+             [1, 4, 2, 7, 4, 9, 3, 7]]
     #print('行列式：{}.行列式值：'.format(list1),hlsvalue(list1))
     #print('行列式：{}.行列式值：'.format(list2),hlsvalue(list2))
     #print('行列式：{}\n行列式值：'.format(list3), hlsvalue(list3))
-    print('行列式：{}\n行列式值：'.format(list4), hlsvalue(list4))
+    #print('行列式：{}\n行列式值：'.format(list4), hlsvalue(list4))
+    print('行列式：{}\n行列式值：'.format(list5), hlsvalue(list5))
     #程序结束时间定点
     endtime = time.perf_counter()
     dur = endtime - startime
@@ -186,3 +195,6 @@ if __name__=='__main__':
     #另一种计时方式
     print('time.process_time()程序运行时间：', time.process_time(),'s')
     #枚举的方法对7阶行列式还是可以的，用时80s，对8以上就耗时表较多，时间复杂度O(2**n)以上
+
+    # list6 = [[1, 2, 3], [1, 2, 4], [1, 1, 2]]
+    # print('行列式：{}\n行列式值：'.format(list6), hlsvalue(list6))
